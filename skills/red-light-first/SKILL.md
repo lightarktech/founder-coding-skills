@@ -16,6 +16,7 @@ AIs have a lazy instinct: produce code that *runs*, then produce a test that *ag
 
 - Never weaken, skip, or rewrite a failing test to make it pass. A failing test is information about the code, not an obstacle. If the test itself is genuinely wrong, say so out loud and justify it against the spec before touching it.
 - One test → one implementation → repeat. Don't write twenty tests up front against imagined behavior.
+- **Hostile input is a first-class test case.** Garbage dates, wrong types, negatives, empty files — a founder's users will type them, so your tests type them first. (Our own A/B run shipped a bug where an invalid date silently swallowed an expense — the missing test was exactly this one.)
 - Expected values come from an independent source (the spec, a worked example) — never computed the same way the code computes them.
 
 ## Success criteria

@@ -11,6 +11,7 @@ A ticket is a **vertical slice**: one narrow feature path cut through *every* la
 
 - **Sized to one sitting:** the whole ticket fits in a single fresh AI context window. If it doesn't fit, it's two tickets.
 - **Independently verifiable:** each finished ticket is demoable — the founder can try it and say "yes, that's it" (see `decision-wiring`, seat 3).
+- **Carries its own acceptance checklist:** each ticket lists the checkable items that mean "done", and names the seam its tests will hit (the public interface, agreed up front). A ticket without a checklist is a wish.
 - **Declares its blockers:** each ticket names which tickets must land first. No blockers = can start now, in parallel.
 - **One ticket, one agent, one fresh context.** The ticket boundary *is* the agent contract boundary (see `dispatch-economics`).
 

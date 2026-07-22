@@ -30,7 +30,7 @@ Honest scope: designed and battle-tested **only** on Claude Code with frontier C
 git clone https://github.com/lightarktech/founder-coding-skills && cp -R founder-coding-skills/skills/* ~/.claude/skills/
 ```
 
-One line, then restart Claude Code (or start a new session). All thirteen skills load automatically when their situations arise — you never have to invoke them by hand, though you can.
+One line, then restart Claude Code (or start a new session). Optional but recommended: install the [enforcement hook](hooks/README.md) — it mechanically reminds the AI to dispatch chores to cheap agents instead of grinding them in your expensive session (we broke our own rule the same day we wrote it; now a machine enforces it). All thirteen skills load automatically when their situations arise — you never have to invoke them by hand, though you can.
 
 ## Layer 1 — How you run the team (founder-facing)
 

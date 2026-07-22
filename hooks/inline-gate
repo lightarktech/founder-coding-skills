@@ -1,0 +1,20 @@
+#!/bin/bash
+# inline-gate — mechanical enforcement of the three-call rule (see skills/model-tiering).
+# Counts consecutive tool calls in a session that happen WITHOUT dispatching an agent.
+# From the 4th call on (and every 4th after), it injects a reminder into the AI's own
+# context: "package this chore and send it to a cheap agent." Dispatching resets the count.
+# Why: we wrote the rule, watched ourselves break it the same day, and concluded what our
+# own skills preach — trust mechanisms, not willpower. So the rule got hardware.
+input=$(cat)
+sid=$(printf '%s' "$input" | jq -r '.session_id // "s"' 2>/dev/null)
+tool=$(printf '%s' "$input" | jq -r '.tool_name // ""' 2>/dev/null)
+d="${TMPDIR:-/tmp}/claude-inline-gate"; mkdir -p "$d"; f="$d/${sid:-s}"
+case "$tool" in
+  Agent|Workflow) rm -f "$f"; exit 0;;
+esac
+n=$(( $(cat "$f" 2>/dev/null || echo 0) + 1 ))
+echo "$n" > "$f"
+if [ "$n" -ge 4 ] && [ $((n % 4)) -eq 0 ]; then
+  printf '{"hookSpecificOutput":{"hookEventName":"PostToolUse","additionalContext":"three-call rule: %s consecutive tool calls in this session without dispatching an agent. If this is the main (expensive) session doing chores — package them and send to a cheap agent, then read its conclusion. If this session IS a dispatched worker, ignore and carry on."}}' "$n"
+fi
+exit 0

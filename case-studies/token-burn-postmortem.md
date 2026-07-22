@@ -1,6 +1,6 @@
 # How We Burned a Week's Quota in Three Days — a Postmortem with Real Numbers
 
-> Every number below is measured from our own session logs (July 2026, building a consumer AI product on Claude Code, Max plan). Nothing is estimated for drama. This bill is why the six skills in this repo exist.
+> Every number below is measured from our own session logs (July 2026, building a consumer AI product on Claude Code, Max plan). Nothing is estimated for drama. This bill is why the skills in this repo exist.
 
 ## The bill (3 days)
 

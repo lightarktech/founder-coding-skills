@@ -14,6 +14,7 @@ Brain work and muscle work are different jobs. Paying brain prices for muscle wo
 ## Rules
 
 - **Sub-agents inherit the parent's model unless told otherwise.** The parent is usually your most expensive session — *always set the model explicitly* on every dispatch. Forgetting this once cost us a 20-agent research fleet all running on the flagship.
+- **The three-call rule.** In a long-running expensive session, any chore that will take more than ~3 tool calls (inventory sweeps, batch edits, running test suites, install-and-verify) goes to a cheap agent as one package — even when each call looks tiny. A fat session re-reads its whole history on every turn, so in a long chat there is no such thing as a small chore. (We learned this the same day we wrote the meters rule: the meter drifted anyway, and the leak was "quick" hand-done chores in a day-old session.)
 - **Scouting is muscle work.** Reading files or web pages to summarize them never needs the top model. The expensive session reads conclusions, not raw material.
 - **Escalate the hard case, not the batch.** If one item in a cheap batch turns out to be genuinely hard, send that one item up a tier. Don't promote the whole pipeline.
 - **Keep the meters marching together.** If your plan shows per-tier usage meters, read them at every dispatch: top-tier meter running ahead → your main session is doing muscle work itself, push drafting/digging down a tier; aggregate meter running ahead → your fleets are too fat, shrink them and do small jobs inline. No meter should hit 100% while another sits half full.

@@ -5,6 +5,8 @@ description: Slice work into thin end-to-end feature tickets, never into technic
 
 How you cut the work decides how it fails. Layer-cuts ("first the database, then the backend, then the UI") mean nothing is demoable until everything is done — and they breed marathon agents: we watched one chew through 8 layer-tasks across 299 turns, getting slower and dumber as its context bloated.
 
+For the full ticket template and the worked wide-change pattern, see [ticket-template.md](ticket-template.md).
+
 ## The rule
 
 A ticket is a **vertical slice**: one narrow feature path cut through *every* layer — data, logic, interface, test — that a user (or the founder) can see working on its own.

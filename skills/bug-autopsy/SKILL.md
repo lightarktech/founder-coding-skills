@@ -5,6 +5,8 @@ description: Structured diagnosis for bugs — no guess-and-patch. Use when some
 
 The expensive failure mode isn't the bug — it's an AI *guessing* at the cause and "fixing" code it never proved guilty. Guess-patches breed regressions, and three guess-patches deep, nobody knows what the system even does anymore.
 
+For the full catalog of ways to build and tighten a repro loop, see [building-repro-loops.md](building-repro-loops.md).
+
 ## The discipline
 
 1. **Build a red light first.** Before any theory, construct one command that reliably shows the bug — a failing test, a script, a curl. If you can't trigger it on demand, you don't understand it yet; keep working on the trigger, not the theory. For flaky bugs, raise the reproduction rate until it's debuggable — loop it 100×, pin the randomness, narrow the timing.

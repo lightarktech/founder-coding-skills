@@ -5,6 +5,8 @@ description: Write the failing test before the fix or feature — never trust a 
 
 AIs have a lazy instinct: produce code that *runs*, then produce a test that *agrees with it*. A test written after the code can pass by construction — we shipped weeks on "all green" dashboards where the tests had been quietly molded to fit broken behavior. Fake green is worse than red: red tells the truth.
 
+For what makes a test worth keeping (boundaries, stubbing rules, the three test smells), see [what-good-tests-look-like.md](what-good-tests-look-like.md).
+
 ## The loop
 
 1. **Write the test first**, asserting the behavior the user actually asked for — through the public interface, not internal details.

@@ -47,7 +47,7 @@ One line, then restart Claude Code (or start a new session). All thirteen skills
 
 ## Layer 2 — How your AI does the work (engineering discipline)
 
-You never touch these — they discipline the AI itself. They're why you can *not* read the code and still trust it.
+You never touch these — they discipline the AI itself. They're why you can *not* read the code and still trust it. Each stays lean on purpose; three carry optional depth files (repro-loop catalog, test-quality guide, ticket template) the AI pulls in only when it needs them.
 
 | Skill | One line |
 |---|---|

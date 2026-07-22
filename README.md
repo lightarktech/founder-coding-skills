@@ -1,4 +1,4 @@
-# founder-skills
+# founder-coding-skills
 
 **Claude Code skills for non-technical founders, solopreneurs, and one-person companies running an AI engineering team — no coding experience required.**
 
@@ -32,8 +32,8 @@ They compose: `grill-founder` sharpens intent → `decision-wiring` routes the d
 ## Install
 
 ```bash
-git clone https://github.com/LightArkTech/founder-skills
-cp -R founder-skills/skills/* ~/.claude/skills/
+git clone https://github.com/lightarktech/founder-coding-skills
+cp -R founder-coding-skills/skills/* ~/.claude/skills/
 ```
 
 Restart Claude Code (or start a new session). The skills load automatically when their situations arise; you can also invoke any of them by name.

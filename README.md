@@ -19,7 +19,7 @@ Extracted from a real company: a non-programmer, voice-typing founder and an AI 
 This pack is designed for **Claude Code running Anthropic's strongest models** (Opus-class and above — the tier a **Max subscription** buys), and we say so openly. Three reasons:
 
 1. **A non-programmer founder has no safety net.** An engineer using AI can catch its mistakes in the code; you can't. Your model isn't *assisting* your engineering — it **is** your engineering. When the CTO seat is filled by a model, you hire the strongest one that exists, not a cheaper intern you can't supervise.
-2. **The skills are written in frontier style.** Every skill here is a lean behavioral contract — goals, boundaries, success criteria — with the step-by-step hand-holding deliberately left out. That follows Anthropic's own authoring guidance ("assume Claude is already very smart"), and published benchmarks showing over-explaining actively *hurts* top models. A weaker model needs the scaffolding we removed; a frontier model is freed by its absence.
+2. **The skills are written in frontier style.** Every skill here is a lean behavioral contract — goals, boundaries, success criteria — with the step-by-step hand-holding deliberately left out. That follows Anthropic's own [authoring guidance](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices) ("Default assumption: Claude is already very smart"), and [published benchmarks](https://tessl.io/blog/your-skill-works-on-opus-does-it-make-haiku-worse-benchmarking-ai-skills-across-claude-models/) showing over-explaining helps weak models most and can actively *hurt* top ones. A weaker model needs the scaffolding we removed; a frontier model is freed by its absence.
 3. **The economics were measured here.** `dispatch-economics` and `model-tiering` are calibrated on real Claude Code Max-plan quota mechanics — our postmortem *is* a Max-plan bill. Sub-agent dispatch, per-dispatch model selection, background agents: the pack assumes Claude Code's premium feature line, because that's what a one-person software company actually runs on.
 
 Honest scope: designed and battle-tested **only** on Claude Code with frontier Claude models. On weaker models or other coding agents, unverified — and the writing style is intentionally not for them.
@@ -61,7 +61,7 @@ They compose: `grill-founder` sharpens what you want → `vertical-tickets` slic
 
 ## Receipts over vibes
 
-The discipline here isn't theory. It came from a measured failure — ~5 billion cached tokens churned in three days — and a measured recovery: our first review job under these rules ran at ~1/50th the comparable spend and caught defects (including a one-word legal-wording deviation) that the old process missed. Real numbers, no drama: [case-studies/token-burn-postmortem.md](case-studies/token-burn-postmortem.md).
+The discipline here isn't theory. It came from a measured failure — ~5 billion cached tokens churned in three days — and a measured recovery: our first review job under these rules ran as 3 small agents / ~290k tokens / 5 minutes — and caught defects (including a one-word legal-wording deviation) that the old process, with its million-token fleets, had missed. Real numbers, no drama: [case-studies/token-burn-postmortem.md](case-studies/token-burn-postmortem.md).
 
 ## Credits
 

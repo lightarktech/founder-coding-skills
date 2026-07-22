@@ -6,7 +6,7 @@
 
 | Metric | Amount |
 |---|---|
-| Output tokens | ~20 million |
+| Output tokens | ~20M as logged (client-restart double-logging inflates this; deduplicated ≈17M) |
 | Cache **writes** | ~370 million tokens |
 | Cache **reads** | ~5 **billion** tokens |
 | Result | 100% of a weekly Max-plan quota, gone by day 3 |
@@ -19,7 +19,7 @@ One repair fleet — 30 coding agents plus 10 review workflows, all on a premium
 
 - **16,932 agent turns** in one campaign
 - Longest single agent: **299 turns**, its context grown past 100k tokens
-- That one agent re-read **~112k tokens of context per turn** near the end
+- Fleet-wide average context re-read: **~112k tokens per turn** (1.9B reads ÷ 16,932 turns); the marathon agent's own context had grown past 100k, so its late turns each dragged six figures of history
 - Fleet subtotal: 6.6M output tokens, **1.9 billion** cache reads
 
 The agent wasn't just expensive. It was *getting dumber* — by turn 250 it was reasoning over a haystack of its own history (context rot). We paid premium prices for degrading judgment.
@@ -35,9 +35,9 @@ The agent wasn't just expensive. It was *getting dumber* — by turn 250 it was 
 
 ## The counterfactual, measured
 
-After installing the rules in this repo, our first comparable job — a two-axis code review of two merged PRs — ran as **3 small agents, quoted before launch, ~290k sub-agent tokens, 5 minutes**. It caught one hard violation and two compliance-grade defects that the old process (CI green, human eyeballs) had let through.
+After installing the rules in this repo, our first review job — a two-axis code review of two merged PRs — ran as **3 small agents, quoted before launch, ~290k sub-agent tokens, 5 minutes**. It caught one hard violation and two compliance-grade defects that the old process (CI green, human eyeballs) had let through.
 
-Same depth. Roughly **1/50th** of the equivalent old-style spend. And the review was *better*, because every agent worked in a fresh, small context.
+For scale: the burn-week campaign above spent **6.6M output tokens** on its build-plus-review fleet. We won't pretend that's a clean apples-to-apples ratio — the old number includes construction — so we just give you both numbers and the observation that matters: the small-fresh-context review was not a cheaper compromise. It found things the expensive process missed, *because* every agent worked in a fresh, small context.
 
 ## The one-line lesson
 

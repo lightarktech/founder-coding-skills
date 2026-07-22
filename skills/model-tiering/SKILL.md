@@ -16,6 +16,7 @@ Brain work and muscle work are different jobs. Paying brain prices for muscle wo
 - **Sub-agents inherit the parent's model unless told otherwise.** The parent is usually your most expensive session — *always set the model explicitly* on every dispatch. Forgetting this once cost us a 20-agent research fleet all running on the flagship.
 - **Scouting is muscle work.** Reading files or web pages to summarize them never needs the top model. The expensive session reads conclusions, not raw material.
 - **Escalate the hard case, not the batch.** If one item in a cheap batch turns out to be genuinely hard, send that one item up a tier. Don't promote the whole pipeline.
+- **Keep the meters marching together.** If your plan shows per-tier usage meters, read them at every dispatch: top-tier meter running ahead → your main session is doing muscle work itself, push drafting/digging down a tier; aggregate meter running ahead → your fleets are too fat, shrink them and do small jobs inline. No meter should hit 100% while another sits half full.
 - **Quota pressure shrinks batches, not thinking.** Under a tight budget, cut fan-out and skip nice-to-have verification passes — never dumb down the planning or the final judgment.
 
 ## Success criteria
